@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicação do ChartJS</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- IMPORTAR CÓDIGOS-->
+
+</head>
+<body style="display: flex;">
+    
+    <div>
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas></canvas>
+      </div>    <!--CANVAS: espaço para umaa estilizar?-->
+      <!--<div>
+        <canvas id="myChart2"></canvas>
+      </div>-->
+      <div>
+        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas></canvas>
+      </div> 
+</body>
+<script>/*setup*/
+    const labels =[ '12:00	', '13:00	', '14:00	', '15:00	', '16:00	', '17:00	'];
+    const data={
+        labels:labels,
+        datasets:[{  /*LINHA DO GRÁFICO*/
+            label:'TEMPERATURA',
+            backgoundColor: 'rgb(255,99,132)',
+            borderColor: 'rgb(255,99,132)',
+            data:[30,29,28,25,22,23],
+        },
+        { 
+        label:'UMIDADE',
+            backgoundColor: 'rgb(0,0,132)',
+            borderColor: 'rgb(0,0,132)',
+            data:[5+75,2+79,40+40,43+42,40+40,50+33],/*UMIDADE*/
+        }
+    ]
+    };
+    const config ={
+        type: 'line',
+        data:data,
+        options: {}
+    };
+
+    const config2 ={
+        type: 'bar',
+        data:data,
+        options: {}
+    };
+</script>
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+    </script> 
+</html>
+
+
